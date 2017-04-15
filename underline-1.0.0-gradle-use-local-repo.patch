@@ -1,0 +1,10 @@
+--- underline-1.0.0/build.gradle.local
++++ underline-1.0.0/build.gradle
+@@ -9,6 +9,7 @@
+ targetCompatibility = '1.6'
+ 
+ repositories {
++    xmvn()
+     mavenCentral()
+ }
+ 

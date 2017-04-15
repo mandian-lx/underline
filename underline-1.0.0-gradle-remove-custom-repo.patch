@@ -1,0 +1,17 @@
+--- underline-1.0.0/build.gradle.plugin
++++ underline-1.0.0/build.gradle
+@@ -62,10 +62,10 @@
+             beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+             
+             // upload to sonatype OSS
+-            repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2") {
+-                authentication(userName: this.hasProperty('sonatypeUsername') ? sonatypeUsername : '',
+-                    password: this.hasProperty('sonatypePassword') ? sonatypePassword : '')
+-            }
++//            repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2") {
++//                authentication(userName: this.hasProperty('sonatypeUsername') ? sonatypeUsername : '',
++//                    password: this.hasProperty('sonatypePassword') ? sonatypePassword : '')
++//            }
+             
+             // pom file details
+             pom.project {
