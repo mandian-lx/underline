@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>de.undercouch</groupId>
+  <artifactId>underline</artifactId>
+  <version>1.0.0</version>
+  <name>underline</name>
+  <description>A Git-like command-line parser with no strings attached</description>
+  <url>http://www.michel-kraemer.com</url>
+  <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  <developers>
+    <developer>
+      <id>michel-kraemer</id>
+      <name>Michel Kraemer</name>
+      <email>michel@undercouch.de</email>
+    </developer>
+  </developers>
+  <scm>
+    <connection>scm:git:git://github.com/michel-kraemer/underline.git</connection>
+    <developerConnection>scm:git:git://github.com/michel-kraemer/underline.git</developerConnection>
+    <url>scm:git:git://github.com/michel-kraemer/underline.git</url>
+  </scm>
+</project>
