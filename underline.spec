@@ -8,7 +8,6 @@ License:	ASL 2.0
 Group:		Development/Java
 URL:		https://github.com/michel-kraemer/%{name}/
 Source0:	https://github.com/michel-kraemer/%{name}/archive/v%{version}/%{name}-%{version}.tar.gz
-Source1:	https://repo1.maven.org/maven2/de/undercouch/%{name}/%{version}/%{name}-%{version}.pom
 Patch0:		%{name}-1.0.0-gradle-use-local-repo.patch 
 Patch1:		%{name}-1.0.0-gradle-remove-custom-repo.patch 
 BuildArch:	noarch
@@ -56,16 +55,14 @@ find . -name "*.class" -delete
 %patch0 -p1 -b .local
 %patch1 -p1 -b .repo
 
-# Add pom.xml
-cp -a %{SOURCE1} ./pom.xml
-
-# fix deps in pom.xml
-%pom_add_dep junit:junit::test
+# fix spurious-executable-perm
+chmod 0644 README.md
 
 %build
+#% gradle_build -f
 # FIXME: test fails
-gradle build install -x test --offline -s
-%mvn_artifact pom.xml build/libs/%{name}-%{version}-%{version}.jar
+gradle install -x test --offline -s
+%mvn_artifact build/poms/pom-default.xml build/libs/%{name}-%{version}-%{version}.jar
 
 %install
 %mvn_install -J build/docs/javadoc
